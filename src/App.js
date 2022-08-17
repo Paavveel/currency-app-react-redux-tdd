@@ -2,5 +2,11 @@ import React from 'react';
 import styles from './App.module.css';
 
 export function App() {
-  return <main className={styles.main}></main>;
+  return (
+    <main className={styles.main}>
+      {/* Header */}
+      {/* Converter form */}
+      {/* Footer */}
+    </main>
+  );
 }
