@@ -3,7 +3,8 @@ import styles from './Quote.module.css';
 import { quotes } from './quotes';
 
 export function Quote() {
-  const { text, author } = quotes[0];
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const { text, author } = quotes[randomIndex];
   return (
     <footer className={styles.quote}>
       <blockquote>{text}</blockquote>
