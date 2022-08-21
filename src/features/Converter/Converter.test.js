@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { renderWithStore } from '../../testUtils';
 import { Converter } from './Converter';
 
 const mockUpdateRub = jest.fn();
@@ -18,12 +19,12 @@ jest.mock('./useConverter', () => ({
 
 describe('when rendered', () => {
   it('rub input should have a value with a rub amount', () => {
-    render(<Converter />);
+    renderWithStore(<Converter />);
     expect(screen.getByLabelText(/Сумма в рублях/)).toHaveValue(100);
   });
 
   it('usd input should have a value with a usd amount', () => {
-    render(<Converter />);
+    renderWithStore(<Converter />);
     expect(screen.getByLabelText(/Сумма в долларах/)).toHaveValue(2.38);
   });
 });
@@ -31,7 +32,7 @@ describe('when rendered', () => {
 describe('when typed in a RUB input', () => {
   it('should update its value', async () => {
     const user = userEvent.setup();
-    render(<Converter />);
+    renderWithStore(<Converter />);
     const input = screen.getByLabelText(/Сумма в рублях/);
 
     await user.clear(input);
@@ -44,7 +45,7 @@ describe('when typed in a RUB input', () => {
 describe('when typed in a USD input', () => {
   it('should update its value', async () => {
     const user = userEvent.setup();
-    render(<Converter />);
+    renderWithStore(<Converter />);
     const input = screen.getByLabelText(/Сумма в долларах/);
 
     await user.clear(input);
