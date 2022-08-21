@@ -1,10 +1,5 @@
-import { initialCourseState } from './courseSlice';
+import { loadingCourseState } from '../../testUtils/store';
 import { fetchTodayCourseRejected } from './rejected';
-
-const loadingCourseState = {
-  ...initialCourseState,
-  status: 'loading',
-};
 
 const testAction = {
   payload: 'Server Error!',

@@ -1,10 +1,5 @@
-import { initialCourseState } from './courseSlice';
+import { loadingCourseState } from '../../testUtils/store';
 import { fetchTodayCourseFulfilled } from './fulfilled';
-
-const loadingCourseState = {
-  ...initialCourseState,
-  status: 'loading',
-};
 
 const testAction = {
   payload: 42,
