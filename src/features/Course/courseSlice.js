@@ -1,5 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCourse } from './courseAPI';
+import { fetchTodayCourseFulfilled } from './fulfilled';
+import { fetchTodayCoursePending } from './pending';
+import { fetchTodayCourseRejected } from './rejected';
 
 export const initialCourseState = {
   value: 42,
@@ -8,10 +11,19 @@ export const initialCourseState = {
 };
 
 export const fetchTodayCourse = createAsyncThunk(
-  'course/fetchCourse',
-  async () => {
-    const response = await fetchCourse();
-    return response.Valute.USD.value;
+  'course/fetchTodayCourse',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetchCourse();
+
+      if (!response) {
+        throw new Error('Server Error!');
+      }
+
+      return response.Valute.USD.value;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
   }
 );
 
@@ -20,9 +32,9 @@ const courseSlice = createSlice({
   initialState: initialCourseState,
   reducers: {},
   extraReducers: {
-    [fetchTodayCourse.pending]: (state, action) => state,
-    [fetchTodayCourse.fulfilled]: (state, action) => state,
-    [fetchTodayCourse.rejected]: (state, action) => state,
+    [fetchTodayCourse.pending]: fetchTodayCoursePending,
+    [fetchTodayCourse.fulfilled]: fetchTodayCourseFulfilled,
+    [fetchTodayCourse.rejected]: fetchTodayCourseRejected,
   },
 });
 
