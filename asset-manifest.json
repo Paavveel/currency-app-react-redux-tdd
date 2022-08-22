@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/currency-app-react-redux-tdd/static/css/main.3fbddc92.css",
+    "main.js": "/currency-app-react-redux-tdd/static/js/main.64fec74c.js",
+    "index.html": "/currency-app-react-redux-tdd/index.html",
+    "main.3fbddc92.css.map": "/currency-app-react-redux-tdd/static/css/main.3fbddc92.css.map",
+    "main.64fec74c.js.map": "/currency-app-react-redux-tdd/static/js/main.64fec74c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fbddc92.css",
+    "static/js/main.64fec74c.js"
+  ]
+}
