@@ -15,12 +15,11 @@ export const fetchTodayCourse = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetchCourse();
-
       if (!response) {
         throw new Error('Server Error!');
       }
 
-      return response.Valute.USD.value;
+      return response.Valute.USD.Value;
     } catch (error) {
       return rejectWithValue(error.message);
     }
