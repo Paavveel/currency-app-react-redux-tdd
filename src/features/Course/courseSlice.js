@@ -30,7 +30,6 @@ export const fetchTodayCourse = createAsyncThunk(
 const courseSlice = createSlice({
   name: 'course',
   initialState: initialCourseState,
-  reducers: {},
   extraReducers: {
     [fetchTodayCourse.pending]: fetchTodayCoursePending,
     [fetchTodayCourse.fulfilled]: fetchTodayCourseFulfilled,
@@ -38,8 +37,8 @@ const courseSlice = createSlice({
   },
 });
 
-export const {} = courseSlice.actions;
-
 export const selectCourse = state => state.course.value;
+export const selectStatus = state => state.course.status;
+export const selectError = state => state.course.error;
 
 export default courseSlice.reducer;
