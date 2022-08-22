@@ -1,4 +1,4 @@
-# Testing React Applications in Practice
+# Testing React Applications
 
 - Extract and test business logic using pure functions;
 - Divide the code into modules so that it's easy to test them;
