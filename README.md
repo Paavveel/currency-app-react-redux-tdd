@@ -7,4 +7,4 @@
 - Work with asynchronous functions and test them;
 - Connect third-party libraries via adapters for convenient testing.
 
-[Demo](https://github.com/Paavveel/currency-app-react-redux-tdd).
+[Demo](https://paavveel.github.io/currency-app-react-redux-tdd/).
