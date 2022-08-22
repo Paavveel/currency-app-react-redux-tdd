@@ -7,4 +7,30 @@
 - Work with asynchronous functions and test them;
 - Connect third-party libraries via adapters for convenient testing.
 
-[Demo](https://paavveel.github.io/currency-app-react-redux-tdd/).
+View the [Demo](https://paavveel.github.io/currency-app-react-redux-tdd/)
+
+## Installation
+
+Clone the repo and install dependencies:
+
+```sh
+git clone git@github.com:Paavveel/currency-app-react-redux-tdd.git
+
+npm install
+```
+
+## Development
+
+For starting the development mode, run:
+
+```sh
+npm start
+```
+
+### Testing
+
+To run all tests:
+
+```sh
+npm test
+```
