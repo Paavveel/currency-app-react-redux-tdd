@@ -15,6 +15,7 @@ export const fetchTodayCourse = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetchCourse();
+
       if (!response) {
         throw new Error('Server Error!');
       }
